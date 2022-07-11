@@ -4,12 +4,14 @@ const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'development',
+  mode: 'production',
   output: {
 	 publicPath: '',
-    filename: 'index.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+	sourceMapFilename: "[name].js.map"
   },
+   devtool: "nosources-source-map",
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
